@@ -8,6 +8,7 @@ import { ResLogin } from '../interfaces/logininterface';
 })
 export class UsuarioService {
  private _urlLogin:string = environment.datosApi.URL;
+ private _seguridadToken:string = environment.seguridad.keyToken;
   constructor(private _Http:HttpClient) { }
 
   login(user:string, Pass:string){
@@ -15,4 +16,7 @@ export class UsuarioService {
     return this._Http.get<ResLogin>(`${this._urlLogin}Mantenimiento/Login/${user}/${Pass}`)
   }
 
+  guardarToken(token:string){
+    localStorage.setItem(this._seguridadToken, token)
+  }
 }

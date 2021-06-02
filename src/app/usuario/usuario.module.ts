@@ -6,18 +6,22 @@ import { HomeUsuarioComponent } from './pages/home-usuario/home-usuario.componen
 import { LoginComponent } from './pages/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MantenimientoUsuarioComponent } from './pages/mantenimiento-usuario/mantenimiento-usuario.component';
+import { CompartidoModule } from '../compartido/compartido.module';
 
 
 @NgModule({
   declarations: [
     HomeUsuarioComponent,
-    LoginComponent
+    LoginComponent,
+    MantenimientoUsuarioComponent
   ],
   imports: [
     CommonModule,
     UsuarioRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CompartidoModule
   ]
 })
 export class UsuarioModule { }

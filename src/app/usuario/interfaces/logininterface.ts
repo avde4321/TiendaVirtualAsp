@@ -1,6 +1,14 @@
 export interface ResLogin {
+    error: Error;
+    data:  Data;
+}
 
-    result: null,
-    value: boolean
+export interface Data {
+    token:        string;
+    existeUsario: boolean;
+}
 
+export interface Error {
+    codError: number;
+    mensaje:  string;
 }
