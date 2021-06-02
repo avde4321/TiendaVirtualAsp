@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tiendaVirtualAsp';
+  listaDato!:string[];
+
+  presentarLista(){
+    this.listaDato = ['Arturo','Maoly','Vicky','Pedro'];
+  }
 }
