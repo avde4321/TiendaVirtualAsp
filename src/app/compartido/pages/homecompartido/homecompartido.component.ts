@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LisDatum } from '../../interfaces/listarmenuinterface';
+import { CompartidoService } from '../../services/compartido.service';
 
 @Component({
   selector: 'app-homecompartido',
@@ -8,8 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomecompartidoComponent implements OnInit {
 
-  constructor() { }
+  listamen!:LisDatum[] 
+  constructor(private _componeteS:CompartidoService) { }
 
   ngOnInit(): void {
+    this.cargaMenu();
+  }
+
+  cargaMenu(){
+      this._componeteS.listaMenu().subscribe(res =>{
+        console.log(res)
+        this.listamen = res.data.lisData;
+      });
+      
   }
 }
