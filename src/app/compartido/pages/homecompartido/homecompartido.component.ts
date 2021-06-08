@@ -22,6 +22,5 @@ export class HomecompartidoComponent implements OnInit {
         console.log(res)
         this.listamen = res.data.lisData;
       });
-      
   }
 }
