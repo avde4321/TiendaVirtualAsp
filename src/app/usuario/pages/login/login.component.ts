@@ -1,5 +1,6 @@
 import { absoluteFrom } from '@angular/compiler-cli/src/ngtsc/file_system';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
@@ -8,10 +9,10 @@ import { UsuarioService } from '../../services/usuario.service';
   styles: [
     `
   .form_login{
-    left : 36%;
-    top : 36%;
+    left : 50%;
+    top : 50%;
     position : absolute;
-    trasform : traslate(-50%,-50%);
+    transform : translate(-50%,-50%);
     }
     `
 
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
   txPass!: string
   estadoLogin: boolean = true;
 
-  constructor(private _usuriaS: UsuarioService) { }
+  constructor(private _usuriaS: UsuarioService, private _router:Router) { }
 
   ngOnInit(): void {
   }
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
         this.txUser = '';
         this.txPass = '';
         this.estadoLogin = true
+        this._router.navigateByUrl('/usuario/mantenimiento/usuario')
       }, (error) => {
         this.estadoLogin = true;
       })

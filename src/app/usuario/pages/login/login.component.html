@@ -1,28 +1,27 @@
 <div class="card form_login bg-dark text-white">
     <div class="col-lg-12 col-md-12 col-sm-12">
-        <h2>Login</h2>
+        <h2>Login Tienda Virtual</h2>
         <br>
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <label for="exampleInputEmail1" class="form-label">User</label>
                 <input [disabled]="!estadoLogin" type="txt" class="form-control" name="txUser" [(ngModel)]="txUser"
-                    height="User">
+                placeholder="User">
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input [disabled]="!estadoLogin" type="password" class="form-control" name="txPass" [(ngModel)]="txPass"
-                    height="Password">
+                placeholder="Password">
             </div>
         </div>
-        <br>
-        <div class="col-lg-12 col-md-12 col-sm-12">
-            <button *ngIf="estadoLogin" class="btn btn-primary" (click)="login()"
-                [disabled]="!estadoLogin">Login</button>
-            <button *ngIf="!estadoLogin">
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </button>
-        </div>
+    </div>
+    <br>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <button *ngIf="estadoLogin" type="button" class="btn btn-primary" (click)="login()" [disabled]="!estadoLogin">
+            Login </button>
+        <button *ngIf="!estadoLogin">
+            <div class="spinner-border" role="status">
+            </div>
+        </button>
     </div>
 </div>

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HomecompartidoComponent } from './pages/homecompartido/homecompartido.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { EstadoPipe } from './pipes/estado.pipe';
+import { ClavePipe } from './pipes/clave.pipe';
 
 
 
@@ -11,6 +13,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     SideBarComponent,
     NavBarComponent,
     HomecompartidoComponent,
+    EstadoPipe,
+    ClavePipe,
   ],
  
   imports: [
@@ -18,7 +22,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
   ],
   exports:[
     HomecompartidoComponent,
-   
+    EstadoPipe,
+    ClavePipe,
   ]
 })
 export class CompartidoModule { }

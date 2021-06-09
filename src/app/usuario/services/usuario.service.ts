@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { modalUser } from '../interfaces/insertarUserinterface';
+import { ResListaUser } from '../interfaces/listaUserinterface';
 import { ResLogin } from '../interfaces/logininterface';
 
 @Injectable({
@@ -18,5 +21,22 @@ export class UsuarioService {
 
   guardarToken(token:string){
     localStorage.setItem(this._seguridadToken, token)
+  }
+
+  verificaToken(){
+     const token = localStorage.getItem(this._seguridadToken);
+     if(token){
+      return of(true);
+     }
+     return of(false);
+  }
+
+  getAllUser(){
+    return this._Http.get<ResListaUser>(`${this._urlLogin}Mantenimiento/GetUsuarioall`)
+  }
+
+  inseratUser(data:modalUser){
+    debugger
+    return this._Http.post<ResLogin>(`${this._urlLogin}Mantenimiento/Postsaveuser/`,data)
   }
 }
