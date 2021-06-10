@@ -36,7 +36,10 @@ export class UsuarioService {
   }
 
   inseratUser(data:modalUser){
-    debugger
     return this._Http.post<ResLogin>(`${this._urlLogin}Mantenimiento/Postsaveuser/`,data)
+  }
+
+  editarUser(data:modalUser){
+    return this._Http.put<ResLogin>(`${this._urlLogin}Mantenimiento/EditarUsuario/`,data)
   }
 }
