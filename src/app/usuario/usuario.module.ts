@@ -8,13 +8,15 @@ import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MantenimientoUsuarioComponent } from './pages/mantenimiento-usuario/mantenimiento-usuario.component';
 import { CompartidoModule } from '../compartido/compartido.module';
+import { CardUsuarioComponent } from './components/card-usuario/card-usuario.component';
 
 
 @NgModule({
   declarations: [
     HomeUsuarioComponent,
     LoginComponent,
-    MantenimientoUsuarioComponent
+    MantenimientoUsuarioComponent,
+    CardUsuarioComponent
   ],
   imports: [
     CommonModule,

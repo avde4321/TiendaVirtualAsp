@@ -1,0 +1,131 @@
+<div class="cardP mb-2">
+    <div class="row ml-2">
+        <div class="col-12 font-weight-bold">
+            Usuario : {{item.usuario1 | titlecase }}
+        </div>
+        <div class="col-12">
+            Clave : {{item.clave | clavePipe}}
+        </div>
+        <div class="col-12">
+            Email : {{item.txEmail | lowercase}}
+        </div>
+        <div class="col-12">
+            Estado : {{item.estado | estadoPipe}}
+        </div>
+    </div>
+</div>
+
+<!--div class="container d-flex justify-content-center">
+    <div class="card col-lg-12 col-sm-12 col-md-12">
+        <form class="row">
+            <br>
+            <div class="form-group form-inline m-2">
+                Buscar: <input class="form-control ml-2" type="text" />
+            </div>
+            <button class="btn btn-lg btn-outline-primary col-lg-4 col-sm-4 col-md-4 m-4"
+                (click)="open(contentAgr)">Agragar</button>
+        </form>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col-lg-2 col-sm-2 col-md-2">Id</th>
+                    <th scope="col-lg-2 col-sm-2 col-md-2">User</th>
+                    <th scope="col-lg-2 col-sm-2 col-md-2">Password</th>
+                    <th scope="col-lg-2 col-sm-2 col-md-2">Email</th>
+                    <th scope="col-lg-2 col-sm-2 col-md-2">FechaIngreso</th>
+                    <th scope="col-lg-2 col-sm-2 col-md-2">Estado</th>
+                    <th scope="col-lg-2 col-sm-2 col-md-2">Editar</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="listausuario">
+                <tr *ngFor="let item of listausuario">
+                    <td>{{item.id}}</td>
+                    <td>{{item.usuario1 | titlecase }}</td>
+                    <td>{{item.clave | clavePipe}}</td>
+                    <td>{{item.txEmail | lowercase}}</td>
+                    <td>{{item.txFechaIngreso}}</td>
+                    <td>{{item.estado | estadoPipe}}</td>
+                    <td><button class="btn btn-warning" (click)="openEditar(item,contentEdit)">Editar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div-->
+
+
+<!--  Modal para registrar  -->
+<!--ng-template #contentAgr let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h5 class="d-flex justify-content-center">Registar Usuario</h5>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="card modal-body">
+        <div class="row col-lg-12 col-sm-12 col-md-12">
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <label class="form-label"> Usuario </label>
+                <input type="text" type="txt" class="form-control" name="txUser" placeholder="User"
+                    [(ngModel)]="txUser">
+            </div>
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <label class="form-label"> Password </label>
+                <input type="text" type="txt" class="form-control" name="txPass" placeholder="Password"
+                    [(ngModel)]="txPass">
+            </div>
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <label class="form-label"> Email </label>
+                <input type="text" type="txt" class="form-control" name="txEmail" placeholder="Email"
+                    [(ngModel)]="txEmail">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning col-lg-4 col-sm-4 col-md-4" (click)="d('Cross click')">Cancelar</button>
+        <button class="btn btn-primary col-lg-4 col-sm-4 col-md-4" (click)="insertarUser()">Guardar</button>
+    </div>
+</ng-template-->
+
+
+<!--  Modal para editar  -->
+<!--ng-template #contentEdit let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h5 class="d-flex justify-content-center">Editar Usuario</h5>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="card modal-body">
+        <div class="row col-lg-12 col-sm-12 col-md-12">
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <label class="form-label"> Id </label>
+                <input type="text" type="txt" class="form-control" name="txIdEdi" placeholder="Id" [(ngModel)]="txIdEdi"
+                    disabled=true>
+            </div>
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <label class="form-label"> Usuario </label>
+                <input type="text" type="txt" class="form-control" name="txUser" placeholder="User"
+                    [(ngModel)]="txUserEdi">
+            </div>
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <label class="form-label"> Password </label>
+                <input type="text" type="txt" class="form-control" name="txPass" placeholder="Password"
+                    [(ngModel)]="txPassEdi">
+            </div>
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <label class="form-label"> Email </label>
+                <input type="text" type="txt" class="form-control" name="txEmail" placeholder="Email"
+                    [(ngModel)]="txEmailEdi">
+            </div>
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <label class="form-label"> Estado </label>
+                <input type="text" type="txt" class="form-control" name="txEmail" placeholder="Estado"
+                    [(ngModel)]="txEstadoEdi">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning col-lg-4 col-sm-4 col-md-4" (click)="d('Cross click')">Cancelar</button>
+        <button class="btn btn-primary col-lg-4 col-sm-4 col-md-4" (click)="editar()">Editar</button>
+    </div>
+</ng-template-->
